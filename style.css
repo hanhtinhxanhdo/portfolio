@@ -1,76 +1,187 @@
-/* You can easily change the site's colors here */
+/* Step 1: Import a professional font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Step 2: Define a new, modern color palette using CSS Variables */
 :root {
-    --primary-color: #005f73; /* Dark Blue/Teal */
-    --secondary-color: #e9d8a6; /* Light Beige */
-    --background-color: #f8f9fa;
-    --text-color: #343a40;
-    --card-background: #ffffff;
+    --primary-color: #2c3e50;    /* A deep, slate blue for headings and accents */
+    --secondary-color: #3498db;  /* A bright, friendly blue for links and highlights */
+    --background-color: #f4f6f8; /* A very light grey for the page background */
+    --text-color: #34495e;       /* A softer, dark grey for body text */
+    --card-background: #ffffff;  /* Clean white for content cards */
+    --border-color: #ecf0f1;     /* A subtle border color */
 }
 
+/* Step 3: General body and typography styles for a clean look */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lato', sans-serif; /* Use the new font */
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
-    line-height: 1.6;
-}
-
-header {
-    background-color: var(--primary-color);
-    color: white;
-    text-align: center;
-    padding: 3rem 1rem;
+    line-height: 1.7; /* Increased line height for better readability */
+    font-size: 16px;
 }
 
 main {
-    max-width: 900px;
+    max-width: 960px; /* A standard, comfortable width for content */
     margin: auto;
-    padding: 2rem 1rem;
+    padding: 2rem 1.5rem;
 }
 
 section {
     background-color: var(--card-background);
-    margin-bottom: 2rem;
-    padding: 2rem;
+    margin-bottom: 2.5rem; /* More space between sections */
+    padding: 2rem 2.5rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* A subtle, modern shadow */
+    border: 1px solid var(--border-color);
 }
 
+/* Step 4: Better styling for headings and links */
 h1, h2, h3 {
+    font-weight: 700; /* Bolder headings */
     color: var(--primary-color);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: white; /* Header h1 should be white on the dark background */
+}
+
+h2 {
+    font-size: 2rem;
+    border-bottom: 3px solid var(--secondary-color);
+    padding-bottom: 0.75rem;
+    margin-bottom: 2rem;
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     text-decoration: none;
-    font-weight: bold;
+    transition: color 0.3s ease; /* Smooth color transition on hover */
 }
 
 a:hover {
-    text-decoration: underline;
+    color: var(--primary-color);
 }
 
-/* etc. (rest of the CSS code) */
+/* Step 5: The new, intelligently scaled profile picture */
+.profile-pic {
+    display: block;
+    width: 150px;  /* A fixed, balanced size for desktop */
+    height: 150px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    margin: 0 auto 2rem auto; /* Centers it and adds space below */
+    border: 6px solid var(--card-background); /* Creates a nice "cutout" effect */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* A subtle glow */
+}
+
+/* Step 6: Refined Header and Footer */
+header {
+    background: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+}
+header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.85);
+}
 
 footer {
     text-align: center;
     padding: 2rem;
-    background-color: #e9ecef;
+    background-color: var(--card-background);
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
 }
 
-/* PASTE THE NEW CODE HERE */
-.profile-pic {
-    display: block;
-    width: 25%;
-    max-width: 150px;
-    height: auto;
-    border-radius: 50%;
-    margin: 0 auto 1.5rem auto;
-    border: 5px solid var(--secondary-color);
+/* Step 7: Polished "Skills" pills */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.skills-container span {
+    background-color: #eaf2f8; /* A very light blue */
+    color: var(--primary-color);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
 }
 
-/* Make grid responsive for larger screens */
+/* Step 8: Polished Project Cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.project-card {
+    border: 1px solid var(--border-color);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.project-card p {
+    flex-grow: 1; /* Ensures cards in a row are the same height */
+}
+.project-card a {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+.project-card a:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
+/* Step 9: Make it all responsive for mobile phones */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px; /* Slightly smaller font on mobile */
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    /* Here we rescale the profile picture for smaller screens */
+    .profile-pic {
+        width: 120px;
+        height: 120px;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+}
+
+/* This rule was in the original template, let's keep it for wider screens */
 @media (min-width: 768px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
