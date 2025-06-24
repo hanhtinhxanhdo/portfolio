@@ -70,12 +70,13 @@ a:hover {
 /* Step 5: The new, intelligently scaled profile picture */
 .profile-pic {
     display: block;
-    width: 150px;  /* A fixed, balanced size for desktop */
+    width: 150px;
     height: 150px;
-    border-radius: 50%; /* Makes it a perfect circle */
-    margin: 0 auto 2rem auto; /* Centers it and adds space below */
-    border: 6px solid var(--card-background); /* Creates a nice "cutout" effect */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* A subtle glow */
+    border-radius: 50%;
+    margin: 0; /* Changed from auto-centering */
+    border: 6px solid var(--card-background);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    flex-shrink: 0; /* Prevents image from shrinking */
 }
 
 /* Step 6: Refined Header and Footer */
