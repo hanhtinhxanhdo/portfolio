@@ -79,6 +79,17 @@ a:hover {
     flex-shrink: 0; /* Prevents image from shrinking */
 }
 
+/* New styles for the side-by-side About Me layout */
+.about-me-container {
+    display: flex;
+    align-items: center; /* This vertically centers the image with the text */
+    gap: 2.5rem;         /* This creates space between the image and the text */
+}
+
+.about-me-text {
+    flex-grow: 1; /* This allows the text block to fill the available space */
+}
+
 /* Step 6: Refined Header and Footer */
 header {
     background: var(--primary-color);
@@ -180,6 +191,18 @@ footer {
     section {
         padding: 1.5rem;
     }
+
+    .about-me-container {
+    flex-direction: column; /* Stacks the image on top of the text */
+    gap: 2rem;
+    }
+    .profile-pic {
+        margin-bottom: 1rem; /* Adds some space below the pic when stacked */
+    }
+    .about-me-text p {
+        text-align: center; /* Centers the text on mobile for a nicer look */
+    }    
+    
 }
 
 /* This rule was in the original template, let's keep it for wider screens */
