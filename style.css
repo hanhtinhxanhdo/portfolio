@@ -7,15 +7,6 @@
     --card-background: #ffffff;
 }
 
-.profile-pic {
-    display: block;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin: 0 auto 1.5rem auto;
-    border: 5px solid var(--secondary-color);
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -61,3 +52,27 @@ a:hover {
 }
 
 /* etc. (rest of the CSS code) */
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #e9ecef;
+}
+
+/* PASTE THE NEW CODE HERE */
+.profile-pic {
+    display: block;
+    width: 25%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+    border: 5px solid var(--secondary-color);
+}
+
+/* Make grid responsive for larger screens */
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
